@@ -1,0 +1,2 @@
+require('./greetingsCommand');
+require('./conversationCommand');

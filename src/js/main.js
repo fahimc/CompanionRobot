@@ -1,4 +1,6 @@
-import Title from "./component/title";
+
+import SpeakService from "./service/speak/speakService";
+import SpeechRecognitionService from "./service/recognition/speechRecognitionService";
 
 let Main =
 {
@@ -8,8 +10,8 @@ let Main =
   },
   onLoaded()
   {
-    let title = new Title();
-    title.update();
+    SpeakService.init();
+    SpeechRecognitionService.init();
   }
 };
 
