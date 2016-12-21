@@ -1,12 +1,5 @@
 {
-    "ecmaFeatures": {
-      "modules": true,
-      "sourceType": "module"
-    },
-
-    "parserOptions": {
-      "sourceType": "module"
-    },
+    "ecmaFeatures": {},
 
     "env": {
         "browser": false,

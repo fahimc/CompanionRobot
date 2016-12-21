@@ -1,4 +1,4 @@
 {
-  "source-directory" : "",
-  "build-directory" : ""
+  "source-directory": "src",
+  "build-directory": ""
 }
