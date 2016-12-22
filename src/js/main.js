@@ -1,6 +1,8 @@
 
 import SpeakService from "./service/speak/speakService";
 import SpeechRecognitionService from "./service/recognition/speechRecognitionService";
+import ConversationService from "./service/conversationService";
+import MemoryService from "./service/memory/memoryService";
 
 let Main =
 {
@@ -12,6 +14,7 @@ let Main =
   {
     SpeakService.init();
     SpeechRecognitionService.init();
+    ConversationService.init();
   }
 };
 

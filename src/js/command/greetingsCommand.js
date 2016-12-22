@@ -13,10 +13,10 @@ class GreetingsCommand {
     getCommands() {
         let name = PersonalModel.NAME;
         let commands = {
+          [name]: this.onGreeting.bind(this),
+          ['hi ' + name]: this.onGreeting.bind(this),
+          ['hello ' + name]: this.onGreeting.bind(this)
         };
-      commands[name] = this.onGreeting.bind(this);
-      commands['hi ' + name] = this.onGreeting.bind(this);
-      commands['hello ' + name] = this.onGreeting.bind(this);
       return commands;
     }
     getReponse(){
@@ -27,6 +27,7 @@ class GreetingsCommand {
     }
     onGreeting(tag) {
         EventManager.dispatchEvent(EventModel.SPEAK, this.getReponse()); 
+        EventManager.dispatchEvent(EventModel.TRIGGERED_GREETING); 
     }
 };
 

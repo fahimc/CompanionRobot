@@ -1,28 +1,24 @@
 import PersonalModel from '../model/personalModel';
+import MainModel from '../model/mainModel';
+import ConversationModel from '../model/response/conversationModel';
 import EventManager from '../event/eventManager';
 import EventModel from '../event/model/eventModel';
 
 class ConversationCommand {
-    constructor(){
-      this.responses = [
-        'i\'m good'
-      ];
-    }
+    constructor() {}
     getCommands() {
         let name = PersonalModel.NAME;
         let commands = {
+            [name + ' how are you']: this.onHowAreYou.bind(this)
         };
-      commands[name + ' how are you'] = this.onHowAreYou.bind(this);
-      return commands;
+        return commands;
     }
-    getReponse(){
-      return this.responses[Math.floor(Math.random()*this.responses.length)];
-    }
-    debug(){
-      this.onHowAreYou();  
+    debug() {
+        this.onHowAreYou();
     }
     onHowAreYou(tag) {
-        EventManager.dispatchEvent(EventModel.SPEAK, this.getReponse()); 
+        let response = MainModel.getResponse(ConversationModel, 'how are you');
+        EventManager.dispatchEvent(EventModel.SPEAK, response);
     }
 };
 
